@@ -10,7 +10,7 @@ export default function FilterMenu({
   return (
     <FormControl sx={{ width: "200px", maxWidth: "100%" }}>
       <InputLabel>Filter By Region</InputLabel>
-      <Select value="">
+      <Select value="" areia-label="Filter Countries">
         <MenuItem
           onClick={() => {
             setFilteredRegion("");

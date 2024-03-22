@@ -44,9 +44,9 @@ export default function StateContext({ children }: ContextPropType) {
     if (recentCountries.includes(clickedCountry)) {
       return;
     } else {
-      if (recentCountries.length === 5) {
+      if (recentCountries.length === 4) {
         setRecentCountries((prev: Country[]) => {
-          prev.pop();
+          prev.shift();
           return [...prev, clickedCountry];
         });
       } else {

@@ -15,7 +15,9 @@ export default function Search() {
   const countryArray = countries;
   useEffect(() => {
     const filteredContries = countryArray.filter((country) => {
-      return country.name.includes(text);
+      return country.name
+        .toLocaleLowerCase()
+        .includes(text.toLocaleLowerCase());
     });
     const countriesGrid = text === "" ? countryArray : filteredContries;
     setCountriesData(countriesGrid);
@@ -27,9 +29,7 @@ export default function Search() {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <IconButton>
-                <SearchOutlined />
-              </IconButton>
+              <SearchOutlined />
             </InputAdornment>
           ),
         }}
